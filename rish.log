@@ -1,0 +1,8 @@
+2024-02-13T16:20:11.101+03:00  INFO 16820 --- [main] c.r.spring.database.pool.ConnectionPool  : Init connection pool
+2024-02-13T16:20:11.121+03:00  INFO 16820 --- [main] c.r.spring.database.pool.ConnectionPool  : Init connection pool
+2024-02-13T16:20:11.129+03:00  INFO 16820 --- [main] c.r.spring.database.pool.ConnectionPool  : Init connection pool
+2024-02-13T16:20:11.137+03:00  WARN 16820 --- [main] c.r.s.d.repository.CompanyRepository     : init company repository
+2024-02-13T16:20:11.143+03:00  WARN 16820 --- [main] c.r.s.d.repository.CompanyRepository     : init company repository
+2024-02-13T16:20:11.422+03:00  INFO 16820 --- [SpringApplicationShutdownHook] c.r.spring.database.pool.ConnectionPool  : Clean connection pool
+2024-02-13T16:20:11.424+03:00  INFO 16820 --- [SpringApplicationShutdownHook] c.r.spring.database.pool.ConnectionPool  : Clean connection pool
+2024-02-13T16:20:11.425+03:00  INFO 16820 --- [SpringApplicationShutdownHook] c.r.spring.database.pool.ConnectionPool  : Clean connection pool
