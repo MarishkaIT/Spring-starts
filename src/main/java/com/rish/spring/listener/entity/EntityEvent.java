@@ -3,7 +3,9 @@ package com.rish.spring.listener.entity;
 import lombok.Getter;
 import org.springframework.context.ApplicationEvent;
 
-public class EntityEvent extends ApplicationEvent {
+import java.util.EventObject;
+
+public class EntityEvent extends EventObject {
 
     @Getter
     private final AccessType accessType;

@@ -1,0 +1,2 @@
+ org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+ com.rish.logging.config.LoggingAutoConfiguration

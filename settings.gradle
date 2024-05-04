@@ -1,2 +1,4 @@
 rootProject.name = 'Spring-start'
 
+include 'common-logging-starter'
+

@@ -8,7 +8,7 @@ import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.context.annotation.*;
 
 @Import(WebConfiguration.class)
-@Configuration
+@Configuration(proxyBeanMethods = true)
 //@ImportResource("classpath:application.xml")
 public class ApplicationConfiguration {
 
@@ -23,17 +23,5 @@ public class ApplicationConfiguration {
         return new ConnectionPool("test-pool", 25);
     }
 
-    @Bean
-    @Profile("prod|web")
-    public UserRepository userRepository2(ConnectionPool pool2) {
-        return new UserRepository(pool2);
-    }
 
-    @Bean
-    public UserRepository userRepository3() {
-        ConnectionPool connectionPool1 = pool3();
-        ConnectionPool connectionPool2 = pool3();
-        ConnectionPool connectionPool3 = pool3();
-        return new UserRepository(pool3());
-    }
 }

@@ -1,6 +1,6 @@
 db:
   username: postgres
-  password: password
+  password: postgres
   driver: PostgresDriver
   url: postgres:5432
   hosts: localhost,127.0.0.1
@@ -21,10 +21,57 @@ db:
 
 spring.profiles.active: qa
 
+app.common.logging:
+  enabled: true
+  level: INFO
+
 logging:
   level:
-    root: WARN
+    root: INFO
     com.rish.spring.database.pool.ConnectionPool: INFO
+    org.springframework.jdbc.core: TRACE
   file:
     name: rish.log
     path: /
+spring:
+  mvc:
+    view:
+      prefix: /WEB-INF/jsp/
+      suffix: .jsp
+    format:
+      date: iso
+  datasource:
+    url: jdbc:postgresql://localhost:5433/postgres
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    properties:
+      hibernate:
+        show_sql: true
+
+        format_sql: true
+        hbm2ddl:
+          auto: validate
+        jdbc:
+          batch_size: 50
+          fetch_size: 50
+    open-in-view: false
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            clientId: 603038447923-2e1ri8cl5svrtqe4lqev8prvs9762de0.apps.googleusercontent.com
+            clientSecret: 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
+            redirectUri: http://localhost:8080/login/oauth2/code/google
+            scope: openid, email, profile
+  messages:
+    basename: messages
+springdoc:
+  swagger-ui:
+    oauth:
+      client-id: 603038447923-2e1ri8cl5svrtqe4lqev8prvs9762de0.apps.googleusercontent.com
+      client-secret: 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
+      scopes: openid, email, profile
+    oauth2-redirect-url: http://localhost:8080/swagger-ui/oauth2-redirect.html
